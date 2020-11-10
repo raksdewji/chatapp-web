@@ -1,0 +1,22 @@
+{
+  "name": "chatapp-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raksdewji/chatapp-web.git"
+  },
+  "author": "Rakheem Dewji",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raksdewji/chatapp-web/issues"
+  },
+  "homepage": "https://github.com/raksdewji/chatapp-web#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
