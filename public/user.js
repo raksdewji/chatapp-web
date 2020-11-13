@@ -1,3 +1,7 @@
+/**
+ * Handles all the user end JS
+ */
+
 $(function () {
       let socket = io();
 
