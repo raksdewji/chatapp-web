@@ -3,6 +3,7 @@ var app = express();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 var pokemon = require('pokemon');
+var emojify = require('node-emojify');
 
 const { timeStamp } = require('console');
 const { random } = require('pokemon');
@@ -103,6 +104,7 @@ io.on('connection', (socket) => {
         io.sockets.connected[socket.id].emit('error message', "Invalid command");
       }
     } else {
+
       io.emit('chat message', messageDetails);
       messageLog.push(messageDetails);
     }

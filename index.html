@@ -166,7 +166,7 @@
             /(?:(?:^|.*;\s*)username\s*\=\s*([^;]*).*$)|^.*$/,
             "$1"
           );
-          if (checkExistingUsername(cookieValue, user.onlineUsers) === true) {
+          if (checkDuplicate(cookieValue, user.onlineUsers) === true) {
             $("#username").html(user.user);
             socket.emit("online user", user.user);
           } else {
@@ -182,7 +182,7 @@
       });
 
       socket.on("online users", function (onUsersList) {
-        updateOnlineUsers(onUsersList);
+        updateUsers(onUsersList);
       });
 
       socket.on("username changed", function (newName) {
@@ -266,10 +266,10 @@
       });
 
       socket.on("user disconnected", function (onUsersList) {
-        updateOnlineUsers(onUsersList);
+        updateUsers(onUsersList);
       });
 
-      function updateOnlineUsers(userList) {
+      function updateUsers(userList) {
         for (let i = 0; i < userList.length; i++) {
           if (i === 0) {
             $("#users").html("<li>" + userList[i] + "</li>");
@@ -279,7 +279,7 @@
         }
       }
 
-      function checkExistingUsername(username, onUsersList) {
+      function checkDuplicate(username, onUsersList) {
         for (let i = 0; i < onUsersList.length; i++) {
           if (onUsersList[i] === username) {
             return true;
