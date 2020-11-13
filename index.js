@@ -24,13 +24,15 @@ let messageLog = [];
 let usersMap = new Map();
 
 var emojiMap = {
-  ":)": "\uD83D\uDE03",
+  ":)": "\ud83d\ude00",
+  ":(": "\ud83d\ude1e",
   ";)": "\ud83d\ude09",
   ":')": "\ud83d\ude0a",
   "<3": "\u2764\uFE0F",
   "</3": "\uD83D\uDC94",
   ":p": "\ud83d\ude1b",
-  ":o": "\ud83d\ude2e"
+  ":o": "\ud83d\ude2e",
+  ":D": "\ud83d\ude03"
 };
 
 io.on('connection', (socket) => { 
