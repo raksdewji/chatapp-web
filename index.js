@@ -60,9 +60,11 @@ io.on('connection', (socket) => {
   });
 
   // Handle messages
+  // Since the heroku uses UTC for its server, I had to hard code the timezone to GMT.
   socket.on('chat message', msg => {
-    let date = new Date();
-    let timeStamp = date.getHours() + ":" + (date.getMinutes() < 10 ? '0':'') + date.getMinutes();
+    var serverDate = new Date();
+    var gmtDate = new Date(serverDate.toLocaleString('en-US', {timeZone: 'America/Denver'}));
+    let timeStamp = gmtDate.getHours() + ":" + (gmtDate.getMinutes() < 10 ? '0':'') + gmtDate.getMinutes();
 
     let user = usersMap.get(socket.id);
     let messageDetails = { time: timeStamp, username: user.username, color: user.color, message: msg, clientID: socket.id }
