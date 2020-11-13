@@ -24,14 +24,14 @@
         background-color: #d3d3d3;
       }
 
-      #usernameArea {
+      #welcome {
         margin-top: 5px;
         text-align: center;
         padding: 0;
         border: 3px solid #000000;
         font-size: 20px;
         color: white;
-        background-color: #333;
+        background-color: black;
       }
 
       #mainContent {
@@ -77,7 +77,7 @@
         }
       }
 
-      #onlineUserArea {
+      #onlineUsers {
         text-align: center;
         padding: 0;
         border-left: 3px solid #000000;
@@ -97,7 +97,7 @@
         padding: 0;
       }
 
-      #sendMessageArea {
+      #sendMessage {
         text-align: center;
         margin-bottom: 5px;
         background: #999;
@@ -292,7 +292,7 @@
 
   <body>
     <div class="container h-100 d-flex flex-column" style="min-height: 0">
-      <div id="usernameArea" class="row flex-shrink-0">
+      <div id="welcome" class="row flex-shrink-0">
         <div class="col-12">
           <p id="usernameContent">Welcome to Chat App: <b id="username"></b></p>
         </div>
@@ -303,13 +303,13 @@
           <ul id="messages"></ul>
         </div>
 
-        <div id="onlineUserArea" class="col-4">
+        <div id="onlineUsers" class="col-4">
           <p id="onlineUserTitle" class="col"><b>ONLINE USERS</b></p>
           <ul id="users"></ul>
         </div>
       </div>
 
-      <div id="sendMessageArea" class="row flex-shrink-0">
+      <div id="sendMessage" class="row flex-shrink-0">
         <div class="col-12">
           <form action="">
             <input id="m" class="col-8" autocomplete="off" />
