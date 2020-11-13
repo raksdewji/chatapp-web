@@ -7,6 +7,8 @@ const { random } = require('pokemon');
 var pokemon = require('pokemon');
 const { on } = require('process');
 
+const PORT = 3000 || process.env.PORT;
+
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
