@@ -125,5 +125,5 @@ io.on('connection', (socket) => {
 
 // Listening on port 3000
 http.listen(PORT, () => {
-  console.log('listening on 3000');
+  console.log('listening on ${PORT}');
 });
