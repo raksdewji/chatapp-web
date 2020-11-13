@@ -2,18 +2,22 @@ var express = require('express');
 var app = express();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
+var path = require('path');
 var pokemon = require('pokemon');
 var emojify = require('node-emojify');
 
 const { timeStamp } = require('console');
 const { random } = require('pokemon');
 const { on } = require('process');
+const { appendFile } = require('fs');
 
 const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
+
+app.use(express.static(__dirname + '/public'));
 
 let onUsersList = [];
 let messageLog = [];

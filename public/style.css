@@ -1,0 +1,104 @@
+html,
+body {
+  font-family: "Raleway", sans-serif;
+  height: 100%;
+  background-color: #d3d3d3;
+}
+
+#welcome {
+  margin-top: 5px;
+  text-align: center;
+  padding: 0;
+  border: 3px solid #000000;
+  font-size: 20px;
+  color: white;
+  background-color: black;
+}
+
+#mainContent {
+  border-left: 3px solid #000000;
+  border-right: 3px solid #000000;
+  min-height: 0;
+}
+
+#messageLog {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  background: #999;
+  overflow-y: scroll;
+  color: black;
+}
+
+#messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background: #999;
+  color: black;
+}
+
+#messages li {
+  padding: 5px 10px;
+  border-right: 3px solid #000000;
+  border-left: 3px solid #000000;
+}
+
+#messages li:first-child {
+  border-top: 3px solid #000000;
+}
+
+#messages li:nth-child(odd) {
+  background-color: #888;
+}
+
+@-moz-document url-prefix() {
+  ul {
+    min-height: 0;
+  }
+}
+
+#onlineUsers {
+  text-align: center;
+  padding: 0;
+  min-height: 0;
+  border-left: 3px solid #000000;
+  font-size: 20px;
+  overflow-y: scroll;
+  background-color: #333;
+  color: white;
+}
+
+#onlineUserTitle {
+  padding: 10px;
+}
+
+#users {
+  list-style-type: none;
+  padding: 0;
+}
+
+#sendMessage {
+  text-align: center;
+  margin-bottom: 5px;
+  background: #999;
+  border: 3px solid #000000;
+}
+
+form {
+  background: #999;
+  padding: 5px;
+}
+
+form input {
+  border: 0;
+  padding: 10px;
+}
+
+form button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+}
