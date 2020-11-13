@@ -14,7 +14,7 @@
 
 ## Chat Commands
 
-`/name` change your username
+`/name` change your username <br />
 `/color` change your username color
 
 ## Install
