@@ -2,12 +2,13 @@ var express = require('express');
 var app = express();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
+var pokemon = require('pokemon');
+
 const { timeStamp } = require('console');
 const { random } = require('pokemon');
-var pokemon = require('pokemon');
 const { on } = require('process');
 
-const PORT = 3000 || process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
