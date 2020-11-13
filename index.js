@@ -23,6 +23,16 @@ let onUsersList = [];
 let messageLog = [];
 let usersMap = new Map();
 
+var emojiMap = {
+  ":)": "\uD83D\uDE03",
+  ";)": "\ud83d\ude09",
+  ":')": "\ud83d\ude0a",
+  "<3": "\u2764\uFE0F",
+  "</3": "\uD83D\uDC94",
+  ":p": "\ud83d\ude1b",
+  ":o": "\ud83d\ude2e"
+};
+
 io.on('connection', (socket) => { 
 
   // Random username generation
@@ -60,15 +70,20 @@ io.on('connection', (socket) => {
   });
 
   // Handle messages
-  // Since the heroku uses UTC for its server, I had to hard code the timezone to GMT.
+  // Since the heroku uses UTC for its server, I had to hard code the timezone to GMT
   socket.on('chat message', msg => {
     var serverDate = new Date();
     var gmtDate = new Date(serverDate.toLocaleString('en-US', {timeZone: 'America/Denver'}));
     let timeStamp = gmtDate.getHours() + ":" + (gmtDate.getMinutes() < 10 ? '0':'') + gmtDate.getMinutes();
 
     let user = usersMap.get(socket.id);
+    for (var emoji in emojiMap) {
+      var reg = new RegExp(emoji.replace(/([()[{*+.$^\\|?])/g, '\\$1'), 'gim');
+      msg = msg.replace(reg, emojiMap[emoji]);
+    }
     let messageDetails = { time: timeStamp, username: user.username, color: user.color, message: msg, clientID: socket.id }
-    checkCommand(msg, messageDetails);
+      checkCommand(msg, messageDetails);
+    
   });
 
   // Check and handle commands

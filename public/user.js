@@ -39,10 +39,12 @@ $(function () {
             .split(";")
             .filter((item) => item.trim().startsWith("username=")).length
         ) {
+          // Get the username from the cookie
           let cookieValue = document.cookie.replace(
             /(?:(?:^|.*;\s*)username\s*\=\s*([^;]*).*$)|^.*$/,
             "$1"
           );
+          // check if username already exits in online users
           if (checkDuplicate(cookieValue, user.onlineUsers) === true) {
             $("#username").html(user.user);
             socket.emit("online user", user.user);
@@ -63,6 +65,8 @@ $(function () {
       });
 
       socket.on("username changed", function (newName) {
+        document.cookie =
+            "username=" + newName + "; expires=Fri, 31 Dec 2999 23:59:59 GMT";
         $("#username").html("<b>" + newName + "</b>");
       });
 
