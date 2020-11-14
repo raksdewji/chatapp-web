@@ -14,7 +14,7 @@
 
 ## Chat Commands
 
-`/name` change your username <br />
+`/name newname` change your username <br />
 `/color FFC0CB` change your username color, color must be in hex format (eg. d3d or FFC0CB)
 
 ## Install
