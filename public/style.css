@@ -36,7 +36,6 @@ body {
   padding: 0;
   background: #999;
   color: black;
-  overflow-y: auto;
 }
 
 #messages li {
